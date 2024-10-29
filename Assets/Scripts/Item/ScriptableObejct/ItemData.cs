@@ -19,7 +19,7 @@ public enum ConsumableType // 소비할 때 채워지는 효과
 [Serializable]
 public class ItemDataConsumable
 {
-    public ConsumableType Type; // 소비할 수 있는 아이템 저장
+    public ConsumableType type; // 소비할 수 있는 아이템 저장
     public float value; // 아이템을 소비했을 때 회복시켜줄 값
 }
 

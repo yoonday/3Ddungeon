@@ -173,7 +173,7 @@ public class UIInventory : MonoBehaviour
         Instantiate(data.dropPrefabs, dropPosition.position, Quaternion.Euler(Vector3.one * Random.value * 360));
     }
 
-    public void SelectItem(int index) // 아이템 슬롯에서 버튼을 눌렀을 때 호출되는 함수. 지금 슬롯이 몇 번째 인덱스인지 전달 →  slots 배열에 같은 인덱스에 해당하는 것 찾기
+    public void SelectItem(int index) // 아이템 슬롯에서 버튼을 눌렀을 때 호출되는 함수.
     {
         if (slots[index].item == null) return; // 선택한 아이템이 비어있을 때 return으로 탈출
 
@@ -188,9 +188,9 @@ public class UIInventory : MonoBehaviour
         selectedStatName.text = string.Empty; // 임시로 Empty로 해놓기 - 모든 아이템에 스탯이 있는 게 아님
         selectedStatValue.text = string.Empty;
 
-        for (int i = 0; i < selectedItem.consumables.Length; i++) // 사용(소비) 가능한 아이템이 없다면(Length) for문 실행이 되지 않음
+        for (int i = 0; i < selectedItem.consumables.Length; i++) 
         {
-            // selectedStatName.text += selectedItem.consumables[i].type.ToString() + "\n"; // type 추출하기. 여러개면 연속해서 등록해야해서 +=으로 이어서 넣어줌. \n는 엔터
+            selectedStatName.text += selectedItem.consumables[i].type.ToString() + "\n"; // type 추출하기
             selectedStatValue.text += selectedItem.consumables[i].value.ToString() + "\n";
         }
 
@@ -199,5 +199,46 @@ public class UIInventory : MonoBehaviour
         unequipButton.SetActive(selectedItem.type == ItemType.Equipable && slots[index].equipped); // 장착이 되어있을 때 활성화
         dropButton.SetActive(true); // 조건 상관없이 무조건 활성화 
 
+    }
+
+    public void OnUseButton() // 버튼 이벤트 등록
+    {
+        if (selectedItem.type == ItemType.Consumable) // 선택한 아이템이 소비 가능한 아이템일 때만 '사용하기'
+        {
+            for (int i = 0; i < selectedItem.consumables.Length; i++)
+            {
+                switch (selectedItem.consumables[i].type)
+                {
+                    case ConsumableType.Health:
+                        condition.Heal(selectedItem.consumables[i].value); 
+                        break;
+                    case ConsumableType.Hunger:
+                        condition.Eat(selectedItem.consumables[i].value);
+                        break;
+                }
+            }
+            RemoveSelectedItem(); 
+        }
+    }
+
+    public void OnDropButton() // 버튼 이벤트 등록
+    {
+        ThrowItem(selectedItem); // 선택한 아이템 버리기
+        RemoveSelectedItem(); // 선택한 아이템 정보 제거하기
+    }
+
+    void RemoveSelectedItem()  // UI업데이트를 위함
+    {
+        slots[selectedItemIndex].quantity--; // 수량 줄이기
+
+        if (slots[selectedItemIndex].quantity <= 0) // 수량이 0보다 적어질 경우
+        {
+            selectedItem = null;  
+            slots[selectedItemIndex].item = null; 
+            selectedItemIndex = -1; 
+            ClearSelectedItemWindow(); 
+        }
+
+        UpdateUI(); // Slot 초기화
     }
 }

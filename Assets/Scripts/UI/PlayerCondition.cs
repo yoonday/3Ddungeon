@@ -36,17 +36,17 @@ public class PlayerCondition : MonoBehaviour
         Debug.Log("»ç¸Á");
     }
 
-    private void Heal(float amount)
+    public void Heal(float amount)
     {
         health.Add(amount);
     }
 
-    private void Eat(float amount)
+    public void Eat(float amount)
     {
         hunger.Add(amount);
     }
 
-    private void SpeedUp(float amount)
+    public void SpeedUp(float amount)
     {
         speed.Add(amount);
     }
