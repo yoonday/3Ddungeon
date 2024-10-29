@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
 
 public class Condition : MonoBehaviour
@@ -44,6 +45,25 @@ public class Condition : MonoBehaviour
     {
         // curValue -= value; 최소값보다 작아지는 경우 발생
         curValue = Mathf.Max(curValue - value, 0);
+    }
+
+    public void SpeedUp(float amount, float duration, PlayerController controller)
+    {
+        StartCoroutine(ChangeSpeed(amount, duration, controller));
+    }
+
+    private IEnumerator ChangeSpeed(float amount, float duration, PlayerController controller)
+    {
+        controller.moveSpeed += amount;
+        curValue = controller.moveSpeed;
+        uiBar.fillAmount = GetPercentage();
+
+        yield return new WaitForSeconds(duration);
+
+        controller.moveSpeed -= amount;
+        curValue = controller.moveSpeed;
+        uiBar.fillAmount = GetPercentage();
+
     }
 
 }
