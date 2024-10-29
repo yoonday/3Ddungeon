@@ -13,7 +13,8 @@ public enum ConsumableType // 소비할 때 채워지는 효과
 {
     Health,
     Hunger,
-    Speed
+    Speed,
+    SpecialSkill
 }
 
 [Serializable]
