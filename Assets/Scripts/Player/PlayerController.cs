@@ -22,6 +22,13 @@ public class PlayerController : MonoBehaviour
     
     public bool canLook = true;
 
+    [Header("Camera")] // 카메라 
+    public Camera FPCamera; // 1인칭
+    public Camera TPCamera; // 3인칭
+    public Interaction interaction;
+
+    private bool isThirdPerson = false; // 1인칭을 기본 값으로
+
     public Action inventory; // 인벤토리 활성화 목적
 
     private Rigidbody _rigidbody;
@@ -49,6 +56,11 @@ public class PlayerController : MonoBehaviour
         if (canLook)
         {
             CameraLook();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightAlt)) // ALT키로 카메라 전환
+        {
+            SwitchCamera();
         }
     }
 
@@ -135,4 +147,32 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle; //  토글 활성화 시 화면 제어를 못함
     }
+
+    private void SwitchCamera()
+    {
+        if (isThirdPerson)
+        {
+            SwitchToFirstPerson();
+        }
+        else
+        {
+            SwitchToThirdPerson();
+        }
+        isThirdPerson = !isThirdPerson;
+    }
+
+    private void SwitchToFirstPerson()
+    {
+        FPCamera.enabled = true;
+        TPCamera.enabled = false;
+        interaction.SetCamera(FPCamera); // Interaction에 카메라 갱신
+    }
+
+    private void SwitchToThirdPerson()
+    {
+        FPCamera.enabled = false;
+        TPCamera.enabled = true;
+        interaction.SetCamera(TPCamera); // Interaction에 카메라 갱신
+    }
+
 }

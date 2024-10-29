@@ -74,4 +74,10 @@ public class Interaction : MonoBehaviour
             promptText.gameObject.SetActive(false);
         }
     }
+
+    public void SetCamera(Camera newCamera)
+    {
+        camera = newCamera;
+    }
+
 }
