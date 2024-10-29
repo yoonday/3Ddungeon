@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,10 @@ public class PlayerController : MonoBehaviour
     private float camCurXRot; // 카메라의 현재 x축 회전 값
     public float lookSensitivity; // 회전 민감도
     private Vector2 mouseDelta;
+    
+    public bool canLook = true;
 
+    public Action inventory; // 인벤토리 활성화 목적
 
     private Rigidbody _rigidbody;
 
@@ -42,7 +46,10 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        CameraLook();
+        if (canLook)
+        {
+            CameraLook();
+        }
     }
 
     void Move() // 실제로 이동을 수행할 함수. 
@@ -111,5 +118,21 @@ public class PlayerController : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void OnInventory(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            inventory?.Invoke(); // UIinventory에 등록된 Toggle 호출 - Tab키로 창 활성화
+            ToggleCursor(); // 토글이 되어있다면 
+        }
+    }
+
+    public void ToggleCursor()// 커서 토글해주는 기능
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked; 
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        canLook = !toggle; //  토글 활성화 시 화면 제어를 못함
     }
 }
