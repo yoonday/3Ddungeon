@@ -3419,6 +3419,7 @@ MonoBehaviour:
   FPCamera: {fileID: 963194227}
   TPCamera: {fileID: 1804693425}
   interaction: {fileID: 1116092445}
+  doubleJumpDuration: 5
 --- !u!114 &1116092444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4601,7 +4602,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1804693427}
   - component: {fileID: 1804693425}
-  - component: {fileID: 1804693426}
   m_Layer: 6
   m_Name: Third Person Camera
   m_TagString: Untagged
@@ -4660,14 +4660,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1804693426
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1804693424}
-  m_Enabled: 1
 --- !u!4 &1804693427
 Transform:
   m_ObjectHideFlags: 0
@@ -5336,6 +5328,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdca76d2ec9d1654ba66cfae3798f6ba, type: 3}
+--- !u!1001 &8932887047384855145
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5912468482062053968, guid: 45f927fac30eea24593a1e40488e12b1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 5912468482062053968, guid: 45f927fac30eea24593a1e40488e12b1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5912468482062053968, guid: 45f927fac30eea24593a1e40488e12b1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5912468482062053968, guid: 45f927fac30eea24593a1e40488e12b1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5912468482062053968, guid: 45f927fac30eea24593a1e40488e12b1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5912468482062053968, guid: 45f927fac30eea24593a1e40488e12b1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5912468482062053968, guid: 45f927fac30eea24593a1e40488e12b1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5912468482062053968, guid: 45f927fac30eea24593a1e40488e12b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5912468482062053968, guid: 45f927fac30eea24593a1e40488e12b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5912468482062053968, guid: 45f927fac30eea24593a1e40488e12b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135197567510985989, guid: 45f927fac30eea24593a1e40488e12b1, type: 3}
+      propertyPath: m_Name
+      value: Item_DoubleJump
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45f927fac30eea24593a1e40488e12b1, type: 3}
 --- !u!1001 &9008191797833814132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5414,6 +5463,7 @@ SceneRoots:
   - {fileID: 5700510072147748503}
   - {fileID: 9008191797833814132}
   - {fileID: 722272636}
+  - {fileID: 8932887047384855145}
   - {fileID: 1572182016}
   - {fileID: 1404177225}
   - {fileID: 24430687}
