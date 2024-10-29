@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb1751248a262a4d9ffe5f94ddfe999, type: 3}
+  m_Name: Item_Axe
+  m_EditorClassIdentifier: 
+  displayName: "\uB3C4\uB07C"
+  description: "\uC704\uD611\uC6A9"
+  type: 0
+  icon: {fileID: 0}
+  dropPrefabs: {fileID: 6092176962895256541, guid: 56e6e9c8fc3fe77489eca80d5a202511, type: 3}
+  consumables: []
