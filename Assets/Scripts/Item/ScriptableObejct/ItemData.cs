@@ -33,6 +33,13 @@ public class ItemData : ScriptableObject
     public Sprite icon; // 아이콘 정보
     public GameObject dropPrefabs; // 프리팹 정보
 
+    [Header("Stacking")] 
+    public bool canStack; 
+    public int maxStackAmount; 
+
     [Header("Consumable")]
     public ItemDataConsumable[] consumables;
+
+    [Header("Equip")]
+    public GameObject equipPrefab;
 }

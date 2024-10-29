@@ -1736,7 +1736,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 820b96b55fe41b644b28bcb987ddc8dd, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1010808022650710150, guid: 820b96b55fe41b644b28bcb987ddc8dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2298,14 +2298,15 @@ MonoBehaviour:
   slots: []
   inventoryWindow: {fileID: 774464573}
   slotPanel: {fileID: 601358270}
-  selectedItemName: {fileID: 0}
-  selectedItemDescription: {fileID: 0}
-  selectedStatName: {fileID: 0}
-  selectedStatValue: {fileID: 0}
-  useButton: {fileID: 0}
-  equipButton: {fileID: 0}
-  unequipButton: {fileID: 0}
-  dropButton: {fileID: 0}
+  dropPosition: {fileID: 0}
+  selectedItemName: {fileID: 181353427}
+  selectedItemDescription: {fileID: 536791656}
+  selectedStatName: {fileID: 642246225}
+  selectedStatValue: {fileID: 873388279}
+  useButton: {fileID: 1568650695}
+  equipButton: {fileID: 192733101}
+  unequipButton: {fileID: 1066729597}
+  dropButton: {fileID: 1959624149}
 --- !u!1 &873388277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2819,6 +2820,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1255470686}
+  - {fileID: 1167722199}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1116092441
@@ -2946,6 +2948,7 @@ MonoBehaviour:
   controller: {fileID: 0}
   condition: {fileID: 0}
   itemData: {fileID: 0}
+  dropPosition: {fileID: 1167722199}
 --- !u!114 &1116092443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3001,6 +3004,37 @@ MonoBehaviour:
     m_Bits: 256
   curInteractGameObject: {fileID: 0}
   promptText: {fileID: 664000295}
+--- !u!1 &1167722198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1167722199}
+  m_Layer: 6
+  m_Name: dropPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1167722199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167722198}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1116092440}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1255470685
 GameObject:
   m_ObjectHideFlags: 0

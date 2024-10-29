@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 1, g: 0, b: 0.7267132, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
+  m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
 --- !u!114 &2002865707671072387
 MonoBehaviour:
@@ -360,3 +360,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fdc5f71eb2915c428b5ccb1624b55f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  button: {fileID: 6020348098136380262}
+  icon: {fileID: 2903417440069529585}
+  quantityText: {fileID: 3845524085629229041}
+  inventory: {fileID: 0}
+  index: 0
+  equipped: 0
+  quantity: 0
