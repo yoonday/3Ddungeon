@@ -7,13 +7,13 @@ public enum ItemType
 {
     Equipable, // 장착 가능
     Consumable, // 소비 가능
-    Resource // 자원
 }
 
 public enum ConsumableType // 소비할 때 채워지는 효과
 {
     Health,
-    Hunger
+    Hunger,
+    Speed
 }
 
 [Serializable]
@@ -21,6 +21,7 @@ public class ItemDataConsumable
 {
     public ConsumableType type; // 소비할 수 있는 아이템 저장
     public float value; // 아이템을 소비했을 때 회복시켜줄 값
+    public float duration; // 아이템 지속할 시간
 }
 
 [CreateAssetMenu(fileName = "Item", menuName = "New Item")]
