@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Item_DoubleJump
   m_EditorClassIdentifier: 
   displayName: "\uC804\uC124\uC758 \uAF43"
-  description: "\uC77C\uC2DC\uC801\uC73C\uB85C \uB354\uBE14 \uC810\uD504\uAC00 \uAC00\uB2A5\uD558\uB2E4"
+  description: "\uC77C\uC2DC\uC801\uC73C\uB85C \uACF5\uC911 \uC810\uD504\uAC00 \uAC00\uB2A5\uD558\uB2E4"
   type: 1
   icon: {fileID: 21300000, guid: 9e4bacc6853effc438bbfeb356b827bb, type: 3}
-  dropPrefabs: {fileID: 1207449177372228529, guid: 46ca9bca5d4d6824c9973375d741a3df, type: 3}
+  dropPrefabs: {fileID: 6135197567510985989, guid: 45f927fac30eea24593a1e40488e12b1, type: 3}
   canStack: 0
   maxStackAmount: 0
   consumables:
